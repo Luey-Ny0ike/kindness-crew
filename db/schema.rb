@@ -10,16 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106175158) do
+ActiveRecord::Schema.define(version: 20171115064911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "jobs_id"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jobs_id"], name: "index_comments_on_jobs_id"
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "pictures"
   end
 
   create_table "votes", id: :serial, force: :cascade do |t|
@@ -36,4 +45,5 @@ ActiveRecord::Schema.define(version: 20171106175158) do
     t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
+  add_foreign_key "comments", "jobs", column: "jobs_id"
 end

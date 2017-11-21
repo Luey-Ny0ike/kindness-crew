@@ -17,6 +17,22 @@
   </div>
 
   <div class="field">
+    <%= form.label :Pictures %>
+    <%= form.file_field :pictures, multiple: true %>
+    <!-- for multiple image support -->
+    <%= form.hidden_field :pictures_cache %>
+    <!-- to catche the image -->
+    <% if job.pictures? %>
+    <% job.pictures.each do |picture|%>
+    <%= image_tag(picture.minithumb.url) %>
+    <%= label_tag :remove_picture do %>
+        Delete
+        <%= form.check_box :remove_picture %>
+      <% end %>
+    <% end %>
+<% end %>
+  </div>
+  <div class="field">
     <%= form.label :description %>
     <%= form.text_field :description, id: :job_description %>
   </div>

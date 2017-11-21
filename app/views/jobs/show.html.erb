@@ -4,7 +4,17 @@
   <strong>Title:</strong>
   <%= @job.title %>
 </p>
+<p>
+  <% if @job.pictures? %>
+    <ul>
+      <% @job.pictures.each do |picture|%>
+      <li><%= image_tag(picture.background.url, alt: "image", class: "img-responsive")%></li>
+      <% end %>
+    </ul>
+  <% end %>
+<strong>Images:</strong>
 
+</p>
 <p>
   <strong>Description:</strong>
   <%= @job.description %>
