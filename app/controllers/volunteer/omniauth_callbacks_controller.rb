@@ -37,3 +37,4 @@ class Volunteer::OmniauthCallbacksController < Devise::OmniauthCallbacksControll
       redirect_to new_volunteer_registration_url
     end
 end
+end
