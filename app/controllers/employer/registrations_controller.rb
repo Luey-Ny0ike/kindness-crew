@@ -1,4 +1,4 @@
-class Volunteer::RegistrationsController < Devise::RegistrationsController
+class Employer::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
@@ -43,11 +43,11 @@ class Volunteer::RegistrationsController < Devise::RegistrationsController
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   # end
   def sign_up_params
-    params.require(:volunteer).permit(:first_name, :last_name, :number, :email, :password, :password_confirmation)
+    params.require(:employer).permit(:name, :number, :email, :password, :password_confirmation)
   end
 
   def account_update_params
-    params.require(:volunteer).permit(:first_name, :last_name, :number, :email, :password, :password_confirmation, :current_password)
+    params.require(:employer).permit(:name, :number, :email, :password, :password_confirmation, :current_password)
   end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params

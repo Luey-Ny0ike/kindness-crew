@@ -1,12 +1,11 @@
-class DeviseCreateVolunteers < ActiveRecord::Migration[5.1]
+class DeviseCreateEmployers < ActiveRecord::Migration[5.1]
   def change
-    create_table :volunteers do |t|
+    create_table :employers do |t|
       ## Database authenticatable
-      t.string :first_name,              null: false, default: ''
-      t.string :last_name,              null: false, default: ''
-      t.string :number,              null: false, default: ''
-      t.string :email,              null: false, default: ''
-      t.string :encrypted_password, null: false, default: ''
+      t.string :name,              null: false, default: ""
+      t.string :number,              null: false, default: ""
+      t.string :email,              null: false, default: ""
+      t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
@@ -22,23 +21,24 @@ class DeviseCreateVolunteers < ActiveRecord::Migration[5.1]
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
-      ## Confirmable
+      # Confirmable
       t.string   :confirmation_token
       t.datetime :confirmed_at
       t.datetime :confirmation_sent_at
       t.string   :unconfirmed_email # Only if using reconfirmable
 
-      ## Lockable
+      # Lockable
       t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       t.string   :unlock_token # Only if unlock strategy is :email or :both
       t.datetime :locked_at
 
+
       t.timestamps null: false
     end
 
-    add_index :volunteers, :email,                unique: true
-    add_index :volunteers, :reset_password_token, unique: true
-    add_index :volunteers, :confirmation_token,   unique: true
-    add_index :volunteers, :unlock_token,         unique: true
+    add_index :employers, :email,                unique: true
+    add_index :employers, :reset_password_token, unique: true
+    # add_index :employers, :confirmation_token,   unique: true
+    # add_index :employers, :unlock_token,         unique: true
   end
 end
