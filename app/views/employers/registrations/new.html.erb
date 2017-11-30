@@ -1,36 +1,49 @@
-<h2>Sign up</h2>
+<div class="container-fluid employer-sign-up">
+  <br><br>
+  <div class="container form">
+      <h2 id="apo">Sign up as a Job provider</h2>
+      <div class="row cd">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  <div class="field">
-    <%= f.label :organisation_name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
-  <div class="field">
-    <%= f.label :organisation_number %><br />
-    <%= f.text_field :number, autofocus: true %>
-  </div>
-  <div class="field">
-    <%= f.label :organisation_email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="col-md-7 field">
+          <%= f.label :organisation_name %><br />
+          <%= f.text_field :name, autofocus: true , class:"form-control"%>
+        </div>
+        <div class="col-md-7 field">
+          <%= f.label :organisation_number %><br />
+          <%= f.text_field :number, autofocus: true, class:"form-control" %>
+        </div>
+        <div class="col-md-7 field">
+          <%= f.label :organisation_email %><br />
+          <%= f.email_field :email, autofocus: true , class:"form-control"%>
+        </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+        <div class="col-md-7 field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" , class:"form-control"%>
+        </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+        <div class="col-md-7 field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" , class:"form-control"%>
+        </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+        <div class="col-md-7 actions">
+          <div id="kati">
+            <%= button_tag(class:"btn btn-primary") do%>
+            Sign Up
+            <%= image_tag ('smile.png')%>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
 
-<%= render "employers/shared/links" %>
+
+    </div>
+    <%= render "employers/shared/links" %>
+  </div>
+</div>
