@@ -29,7 +29,8 @@
   margin-bottom: 8px;
   margin-right: 4px;
 }
-// for the job provider sign
+// for the job provider sign up and sign in
+// sign-up
 .employer-sign-up{
   margin-top: 0px;
   background-image: url('https://cdn.pixabay.com/photo/2017/09/08/18/46/volunteers-2729696__340.png');
@@ -59,4 +60,43 @@
     display: block;
     margin-left: 250px;
   }
+}
+
+// sign-in
+.log{
+  background-image: url('https://cdn.pixabay.com/photo/2016/04/13/13/13/volunteer-1326758_960_720.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  .log-in{
+    background-color:  rgba(100, 129, 141, 0.46);
+
+    opacity: 1;
+    margin-top: 154px;
+    
+    #apo{
+      text-align: center;
+      font-weight: 900;
+      text-shadow: 1px 1px 0px #000;
+      // to make it visible under the bright background
+      font-family: 'Vollkorn SC', serif;
+    }
+  }
+}
+
+// For the job provider dashboard
+.background{
+height: 367px;
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+}
+.no-background{
+  text-align: center;
+  background-color: #d6e5fc;
+  height: 367px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
