@@ -1,43 +1,47 @@
-<%= form_with(model: job, local: true) do |form| %>
-  <% if job.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+  <div class="container row">
+    <%= form_with(model: job, local: true) do |form| %>
+      <% if job.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
 
-      <ul>
-      <% job.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% job.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :job_title %>
-  </div>
+      <div class="field col-md-7">
+        <%= form.label :title %>
+        <%= form.text_field :title, id: :job_title ,class:"form-control"%>
+      </div>
 
-  <div class="field">
-    <%= form.label :Pictures %>
-    <%= form.file_field :pictures, multiple: true %>
-    <!-- for multiple image support -->
-    <%= form.hidden_field :pictures_cache %>
-    <!-- to catche the image -->
-    <% if job.pictures? %>
-    <% job.pictures.each do |picture|%>
-    <%= image_tag(picture.minithumb.url) %>
-    <%= label_tag :remove_picture do %>
-        Delete
-        <%= form.check_box :remove_picture %>
-      <% end %>
+      <div class="field col-md-7">
+        <%= form.label :Pictures %>
+        <%= form.file_field :pictures, multiple: true,class:"form-control" %>
+        <!-- for multiple image support -->
+        <%= form.hidden_field :pictures_cache %>
+        <!-- to catche the image -->
+        <% if job.pictures? %>
+        <% job.pictures.each do |picture|%>
+        <%= image_tag(picture.minithumb.url) %>
+        <%= label_tag :remove_picture do %>
+            Delete
+            <%= form.check_box :remove_picture %>
+          <% end %>
+        <% end %>
     <% end %>
-<% end %>
-  </div>
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :job_description %>
-  </div>
+    <h6 class="text-muted"><em>You can upload multiple images by pressing ctrl + select</em></h6>
+      </div>
+      <div class="field col-md-7">
+        <%= form.label :description %>
+        <%= form.text_area :description, id: :job_description ,class:"form-control" %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="actions col-md-7">
+        <%= form.submit %>
+      </div>
+    <% end %>
+
   </div>
-<% end %>
