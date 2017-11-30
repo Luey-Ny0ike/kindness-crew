@@ -85,6 +85,31 @@
   }
 }
 
+// for the volunteer sign up and sign in
+// sign up
+.volunteer-sign-up{
+  margin-top: 0px;
+  background-image: url('https://cdn.pixabay.com/photo/2017/02/10/12/12/volunteer-2055043__340.png');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: auto;
+  .form2{
+    background-color: rgba(100, 100, 100, 0.08);
+
+    opacity: 1;
+    margin-top: 154px;
+    #apo{
+      text-align: center;
+      font-weight: 900;
+      text-shadow: 1px 1px 0px #000;
+      // to make it visible under the bright background
+      font-family: 'Vollkorn SC', serif;
+    }
+    #kati{
+      text-align: center;
+    }
+  }
+}
 // For the job provider dashboard
 .background{
 height: 367px;
