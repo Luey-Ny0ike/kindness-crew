@@ -54,12 +54,17 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'nested_scaffold'
 gem 'jquery-rails'
+# For JavaScript styling
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'devise'
+# Bootstrap for styling
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+# for image uploads
 gem 'toastr-rails'
+# For styled notifications
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 gem 'cancancan'
+# For the admin panel
 gem 'acts_as_votable', '~> 0.11.1'
+# For liking/unliking posts
