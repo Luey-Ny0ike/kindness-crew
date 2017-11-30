@@ -1,2 +1,17 @@
-<p><%= @employer.name %>
-<%= image_tag(@employer.background.background.url, alt: "image", class: "img-responsive")%>
+<div class="container">
+  <div class="container">
+    <p><%= @employer.name %>
+
+    <% if @employer.background?%>
+    <div class="background" style="background-image:url(<%= @employer.background.url %>)">
+
+    </div>
+    <% else %>
+    <div class="no-background">
+      <br><br>
+      <h2>No background photo.</h2>
+      <h3>Update <%= link_to "here", edit_employer_registration_path%></h3>
+    </div>
+    <% end %>
+  </div>
+</div>
