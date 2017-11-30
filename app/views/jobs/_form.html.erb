@@ -26,10 +26,10 @@
         <% if job.pictures? %>
         <% job.pictures.each do |picture|%>
         <%= image_tag(picture.minithumb.url) %>
-        <%= label_tag :remove_picture do %>
+        <!-- <%= label_tag :remove_picture do %>
             Delete
             <%= form.check_box :remove_picture %>
-          <% end %>
+          <% end %> -->
         <% end %>
     <% end %>
     <h6 class="text-muted"><em>You can upload multiple images by pressing ctrl + select</em></h6>
