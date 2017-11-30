@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171122135518) do
+ActiveRecord::Schema.define(version: 20171128084941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.bigint "jobs_id"
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["jobs_id"], name: "index_comments_on_jobs_id"
-    
+  end
+
   create_table "employers", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "number", default: "", null: false
@@ -43,6 +45,7 @@ ActiveRecord::Schema.define(version: 20171122135518) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "background"
     t.index ["email"], name: "index_employers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_employers_on_reset_password_token", unique: true
   end
