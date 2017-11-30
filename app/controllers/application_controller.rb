@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
     employer_path(@user)
   end
 
+  def after_sign_in_path_for(volunteer)
+    jobs_path
+  end
+
   def after_sign_out_path_for(employer)
     jobs_path
   end
