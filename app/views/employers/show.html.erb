@@ -1,6 +1,5 @@
 <div class="container">
   <div class="container">
-    <p><%= @employer.name %>
 
     <% if @employer.background?%>
     <div class="background" style="background-image:url(<%= @employer.background.url %>)">
@@ -13,5 +12,16 @@
       <h3>Update <%= link_to "here", edit_employer_registration_path%></h3>
     </div>
     <% end %>
+    <div class="row info">
+      <div class="col-md-4 left">
+        <h2><%= @employer.name%></h2>
+        <br>
+        <%= link_to "Edit Profile", edit_employer_registration_path, class:"btn btn-warning"%>
+        <br><br>
+        <h4><strong>Email: </strong><%= @employer.email%></h4>
+        <h4><strong>Phone Number: </strong><%= @employer.number%></h4>
+      </div>
+      <div class="col-md-8"></div>
+    </div>
   </div>
 </div>
