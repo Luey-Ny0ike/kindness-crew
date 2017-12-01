@@ -19,6 +19,11 @@
     <%= f.file_field :background%>
   </div>
 
+  <div class="field">
+    <%= f.label :address%>
+    <%= f.text_field :address%>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
