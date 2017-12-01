@@ -2,26 +2,84 @@
   <div class="container">
 
     <% if @employer.background?%>
-    <div class="background" style="background-image:url(<%= @employer.background.url %>)">
-
-    </div>
+      <div class="background" style="background-image:url(<%= @employer.background.url %>)"></div>
     <% else %>
-    <div class="no-background">
-      <br><br>
-      <h2>No background photo.</h2>
-      <h3>Update <%= link_to "here", edit_employer_registration_path%></h3>
-    </div>
+      <div class="no-background">
+        <br><br>
+        <h2>No background photo.</h2>
+        <h3>Update
+          <%= link_to "here", edit_employer_registration_path%></h3>
+      </div>
     <% end %>
+    <div class="container small">
+      <h2><%= @employer.name%></h2>
+      <br>
+      <%= link_to "Edit Profile", edit_employer_registration_path, class:"btn btn-warning"%>
+      <br><br>
+      <h4>
+        <strong>Email:
+        </strong><%= @employer.email%></h4>
+      <h4>
+        <strong>Phone Number:
+        </strong><%= @employer.number%></h4>
+      <h4>
+    </div>
     <div class="row info">
       <div class="col-md-4 left">
         <h2><%= @employer.name%></h2>
         <br>
         <%= link_to "Edit Profile", edit_employer_registration_path, class:"btn btn-warning"%>
         <br><br>
-        <h4><strong>Email: </strong><%= @employer.email%></h4>
-        <h4><strong>Phone Number: </strong><%= @employer.number%></h4>
+        <h4>
+          <strong>Email:
+          </strong><%= @employer.email%></h4>
+        <h4>
+          <strong>Phone Number:
+          </strong><%= @employer.number%></h4>
+        <h4>
+          <strong>Company Location</strong>
+        </h4>
+        <% if @employer.address?%>
+          <h4><%= @employer.address%></h4>
+          <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@employer.latitude}%2C#{@employer.longitude}", class:"img-responsive"%>
+        <% else %>
+          <h4>No location included</h4>
+        <% end %>
       </div>
-      <div class="col-md-8"></div>
+      <div class="col-md-8">
+      <% if @employer.jobs.any? %>
+      <h2 id="kt">Jobs you've posted</h2>
+      <div class="row">
+        <% @jobs.each do |job|%>
+          <div class="col-md-3 card">
+            <div class="top">
+              <%= image_tag(job.pictures.first.medium.url, class:"img-responsive", id:"image-main")%>
+            </div>
+            <div class="details">
+              <h4 class="card-title">
+                <%= job.title%></h4>
+              <h6 class="text-muted">by
+                <%= job.employer.name %>
+              </h6>
+              <%= link_to "Learn More", job_path(job), class:"btn btn-info"%>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
+</div>
+      <% else %>
+      <h3 id="kt">You have not posted any job yet.</h3>
+      <h3 id="kt">Post your first one <%= link_to "here", new_job_path %></h3>
+      <% end %>
+</div>
+<div class="small">
+  <h3>Your Comapany Location</h3>
+  <% if @employer.address?%>
+    <h4><%= @employer.address%></h4>
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@employer.latitude}%2C#{@employer.longitude}", class:"img-responsive"%>
+  <% else %>
+    <h4>No location included</h4>
+  <% end %>
 </div>
