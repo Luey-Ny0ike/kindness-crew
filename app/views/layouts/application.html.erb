@@ -4,45 +4,111 @@
     <title>KindnessCrew</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Lobster|Patua+One|Ranchers|Shrikhand|Vollkorn+SC" rel="stylesheet">
   </head>
 
   <body>
 
-<% unless flash.empty? %>
-     <script type="text/javascript">
-          <% flash.each do |f| %>
-	      <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-	     	 toastr['<%= type %>']('<%= f[1] %>');
-	   <% end %>
-     </script>
-<% end %>
+    <% unless flash.empty? %>
+      <script type="text/javascript">
+        <% flash.each do |f| %>
+          <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+            toastr['<%= type %>']('<%= f[1] %>');
+          <% end %>
+        </script>
+      <% end %>
+      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+              Menu
+              <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="/">
+              <!--<img src="images/logo.jpg" alt="logo" class="logo">-->
+              <span class="light">Kindness
+              </span>Crew
+            </a>
+          </div>
+          <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+              <li class="hidden">
+                <a href="#page-top"></a>
+              </li>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a class="page-scroll" href="/jobs">Jobs</a>
+              </li>
+              <li>
+                <% if employer_signed_in?%>
 
-    <%= yield %>
-    <% if volunteer_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_volunteer_session_path, method: :delete) %>
-  </li>
-<% else %>
-<% if employer_signed_in? %>
-<li>
-<%= link_to('Logout', destroy_employer_session_path, method: :delete) %>
-</li>
-<% end %>
-<% end %>
+                  <%= link_to('Logout', destroy_employer_session_path, method: :delete) %>
+                <li>
+                  <a href="/employers/14">Profile</a>
+                </li>
+              <% else %>
+                <a href="/employers/sign_in">Sign in(Job provider)</a>
+              <% end %>
+            </li>
+            <li>
+              <% if volunteer_signed_in?%>
 
-<!-- <% if !volunteer_signed_in? & !employer_signed_in? %>
-<div class="container">
-<div class="col-md-3 moja">
-    <%= link_to('Login As Volunteer', new_volunteer_session_path, class:"btn btn-default")  %>
-</div>
-    <div class="col-md-3 mbili">
-      <%= link_to('Login As Job Provider', new_employer_session_path, class:"btn btn-default")  %>
+                <%= link_to('Logout', destroy_volunteer_session_path, method: :delete) %>
+              <% else %>
+                <a href="/volunteers/sign_in">Sign in(volunteer)</a>
+              <% end %>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="space">
+      <%= yield %>
     </div>
-</div>
-  <% end %> -->
-
+    <div class="container-fluid black">
+      <div class="container footer">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Kindness Crew</h3>
+            <p>Helping people changing lives</p>
+            <a href="/">Home</a><br>
+            <a href="/jobs">View jobs</a><br>
+          </div>
+          <div class="col-md-4">
+            <h3>Contact us</h3>
+            <p>You can find us here:</p>
+            <p>
+              <span class="glyphicon glyphicon-map-marker"></span>&nbsp;Upperhill
+              <br>&nbsp;&nbsp;&nbsp;Nairobi, Kenya</p>
+            <p>
+              <span class="glyphicon glyphicon-earphone"></span>&nbsp;+254-726160664
+              <br>&nbsp;&nbsp;&nbsp; +245-774647162</p>
+            <p>
+              <span class="glyphicon glyphicon-envelope"></span>&nbsp; shariff.mohammed.a@gmail.com
+              <br>&nbsp;&nbsp;&nbsp; nyoikelewis@gmai.com</p>
+          </div>
+          <div class="col-md-4">
+            <h3>About us</h3>
+            <p>We are a family and team dedicated to bring happiness and joy to other familes through Volunteer work</p>
+          </div>
+          <hr>
+        </div>
+        <div class="kati">
+          <p>
+            copyright @2017<br>
+            made with
+            <span class="glyphicon glyphicon-heart"></span>
+            by
+            <a href="http://lewis-nyoike.herokuapp.com/" target="_blank">Lewis Nyoike</a>
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
