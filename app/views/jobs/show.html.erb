@@ -11,33 +11,36 @@
         </ul>
       <% end %>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
       <h1 id="fn"><%= @job.title%></h1>
 
       <h3 id="underline">Description:
       </h3>
       <h5><%= @job.description%></h5>
-      <h3>Date: <%= @job.date%>
+      <h3>Date:
+        <%= @job.date%>
       </h3>
-      <h3>Time: <%= @job.time%>
+      <h3>Time:
+        <%= @job.time%>
       </h3>
       <hr>
       <h1><%= image_tag('tuma.png')%>
         <%= @job.employer.name%></h1>
       <% if employer_signed_in?%>
         <% if current_employer.id == @job.employer.id %>
-        <div class="row">
-          <div class="col-md-6">
-            <%= link_to edit_job_path(@job.id) do%>
-            <img
-              class="icon icons8-Edit"
-              width="24"
-              height="24"
-              id="k"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADOUlEQVRoQ92ai7EMQRSG/5sBESCCSwSIABEgAkSACBABIkAErggQATKQAfWpPreOrn6cnZ3t6d2u2qpbMz2955vz+E/33jOdyDg7EQ7NCHJd0jVJvyT9jL7o2UCeS3rhjH8t6VkEZiaQt5IeSfokCQD+fijpnaTHPZhZQAzifQIwu4EIwWwFciUZiME3k/E5xE4wW4AA8TkBmLE1iDDMaBAPQdzfiYZOypVqmI0E8RC/JV1NrzucBy2YUSB5OC1OagfzRtJTi71RIB8k3Zf0UhLeoLwyED8GwrfEMzdMNEeB/JF0Iemu0wOqFUn/PeUKt6Iw5BbPsh7rDmtRPkq6l4kbBgCDUd8cYATGPDzUIyg0gkfvRA9lSu3DCo4nkr4kqBaMiSdhetnOHDq0DMKSu2agGUdfZflTmlvrAA4aWjlES9woAIQfz/jhYbjO/aJ4HsojNYiIUpM3r1Kj6KsZz1Y7gEOA9CBaMOTN11SEALL9iHnGh95/rlsbJApRgwEEoxE6X8ls3SEgNQjrdFHi0uhVKISUNdAbvFQca3mkBWGd7mXNL1hSgrE1mW6iSVE4GEgEgk4XY1sjh0Ej2Pp2IdZQ9lZOmCERCAP8kfovVB/FD0HsC9JLbOKaT/QkxMQO48/T3p3vqIaTd+/SHOmFE+0ISRodVcWOLrAEpAdBZXmQlNrs4BlEjm7Vl1Xu7w2xJLRqX5pvYX1iG3gp3leB2BVkWohdQKaGiIJMDxEBOQqIHsjRQLRAjgqiBsJWk/1zvonZvMS2xDEXRMSMjQ2Dfgfx4oNSI2jcz3unITrRU/gchA0NBnOagQfoefyYEqIUWtaxekC6UK4DZee1PDuFJ+wt5x4pgTDXrt9KoTYVRMkjdiKYA9oRJc/QVtvWk+u+zV6td+rlRH4/N/jfOao7i/XzMdo+t/25a5q0GUTJIy0QgzLv+MTfFKIEwlaTUCEXWoPTdft9YnOIEggGMno/CaMtAANePcbcNc73me9zxIthD8ZOPJjX+yFzH/vCz+Z6wRmUH/bmawVgCog8tEwrPEj+/yBWDJhDqc733+E3uPZE7xG0gRYFY4n/aYyMQC85RYmsO3zOyYD8Bb1TP0IxDLYaAAAAAElFTkSuQmCC">
-            <br>
-            Edit
-          <% end %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= link_to edit_job_path(@job.id) do%>
+              <img
+                class="icon icons8-Edit"
+                width="24"
+                height="24"
+                id="k"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADOUlEQVRoQ92ai7EMQRSG/5sBESCCSwSIABEgAkSACBABIkAErggQATKQAfWpPreOrn6cnZ3t6d2u2qpbMz2955vz+E/33jOdyDg7EQ7NCHJd0jVJvyT9jL7o2UCeS3rhjH8t6VkEZiaQt5IeSfokCQD+fijpnaTHPZhZQAzifQIwu4EIwWwFciUZiME3k/E5xE4wW4AA8TkBmLE1iDDMaBAPQdzfiYZOypVqmI0E8RC/JV1NrzucBy2YUSB5OC1OagfzRtJTi71RIB8k3Zf0UhLeoLwyED8GwrfEMzdMNEeB/JF0Iemu0wOqFUn/PeUKt6Iw5BbPsh7rDmtRPkq6l4kbBgCDUd8cYATGPDzUIyg0gkfvRA9lSu3DCo4nkr4kqBaMiSdhetnOHDq0DMKSu2agGUdfZflTmlvrAA4aWjlES9woAIQfz/jhYbjO/aJ4HsojNYiIUpM3r1Kj6KsZz1Y7gEOA9CBaMOTN11SEALL9iHnGh95/rlsbJApRgwEEoxE6X8ls3SEgNQjrdFHi0uhVKISUNdAbvFQca3mkBWGd7mXNL1hSgrE1mW6iSVE4GEgEgk4XY1sjh0Ej2Pp2IdZQ9lZOmCERCAP8kfovVB/FD0HsC9JLbOKaT/QkxMQO48/T3p3vqIaTd+/SHOmFE+0ISRodVcWOLrAEpAdBZXmQlNrs4BlEjm7Vl1Xu7w2xJLRqX5pvYX1iG3gp3leB2BVkWohdQKaGiIJMDxEBOQqIHsjRQLRAjgqiBsJWk/1zvonZvMS2xDEXRMSMjQ2Dfgfx4oNSI2jcz3unITrRU/gchA0NBnOagQfoefyYEqIUWtaxekC6UK4DZee1PDuFJ+wt5x4pgTDXrt9KoTYVRMkjdiKYA9oRJc/QVtvWk+u+zV6td+rlRH4/N/jfOao7i/XzMdo+t/25a5q0GUTJIy0QgzLv+MTfFKIEwlaTUCEXWoPTdft9YnOIEggGMno/CaMtAANePcbcNc73me9zxIthD8ZOPJjX+yFzH/vCz+Z6wRmUH/bmawVgCog8tEwrPEj+/yBWDJhDqc733+E3uPZE7xG0gRYFY4n/aYyMQC85RYmsO3zOyYD8Bb1TP0IxDLYaAAAAAElFTkSuQmCC">
+              <br>
+              Edit
+            <% end %>
           </div>
           <div class="col-md-6">
             <%= link_to @job, method: :delete, data: { confirm: 'Are you sure?' } do%>
@@ -46,13 +49,26 @@
               src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAkUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZYAkcAAAAMdFJOU8EsGI04AqdEVHpt2Db6C4wAAADBSURBVBgZVc8/C4JgEAZwFRraDBJXIRVaS1uasiHa/MNjQVshzUXmJwiqKaLFvcE9+n7dnVL08PK+/LjjjlcBZ3aQR+E72Yx8fgVHYFsjVZpkVAkXdiegk7cYvfn5SWfAWBVN3oTFaygZ5wS0eBAQgrHGDjDhCjxYRqRhKqgQq7qDq4BuSwMqAdV1FfAELiLNMmgOTwuhO7HKGwQBYH8hS+tK6jDiTNqSblk+LhNfsLwXxd7snwS48Vfb1ErTfvnDB5whVunY+RcmAAAAAElFTkSuQmCC"><br>
             Delete
           <% end %>
-          </div>
         </div>
+      </div>
     <% end %>
   <% end %>
   <hr>
   <h3>Location
   </h3>
+  <h4><%= @job.address%></h4>
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@job.latitude}%2C#{@job.longitude}" %>
+  <!-- I will come include a better quality map, maybe embeded maps instead of this static one -->
+  <h4>Longitude: <%= @job.longitude%></h4>
+  <h4>Latitude: <%= @job.latitude%></h4>
+
+  <h3>Nearby volunteer opportunity locations</h3>
+  <ul>
+    <% @job.nearbys(10).each do |location|%>
+      <li><%= link_to location.address, job_path(location)%> (<%= location.distance.round(2)%> miles)</li>
+    <% end %>
+  </ul>
 </div>
 <%= link_to 'Back', jobs_path %>
 </div>
