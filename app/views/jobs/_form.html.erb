@@ -50,10 +50,11 @@
 
   <div class="col-md-7 field">
     <%= form.label :address%>
-    <%= form.text_field :address, class:"form-control" %>
+    <%= form.text_field :address, class:"form-control", placeholder:"eg Times towers, Nairobi. Makongeni, Thika e.t.c" %>
   </div>
 
-  <div class="col-md-7 field">
+  <!-- I don't think this fields are necessary because geo coder will fill them automaticaly -->
+  <!-- <div class="col-md-7 field">
     <%= form.label :longitude%>
     <%= form.text_field :longitude, class:"form-control" %>
   </div>
@@ -61,7 +62,7 @@
   <div class="col-md-7 field">
     <%= form.label :latitude%>
     <%= form.text_field :latitude, class:"form-control" %>
-  </div>
+  </div> -->
 
   <div class="actions col-md-7">
     <%= form.submit %>
