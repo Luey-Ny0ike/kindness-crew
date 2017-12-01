@@ -39,13 +39,28 @@
     <%= form.text_area :description, id: :job_description ,class:"form-control" %>
   </div>
   <div class="col-md-7 field">
-    <%= form.label :Date_Time%>
+    <%= form.label :Date%>
     <%= form.date_field :date, class:"form-control" %>
   </div>
 
   <div class="col-md-7 field">
-    <%= form.label :Date_Time%>
+    <%= form.label :Time%>
     <%= form.time_field :time, class:"form-control" %>
+  </div>
+
+  <div class="col-md-7 field">
+    <%= form.label :address%>
+    <%= form.text_field :address, class:"form-control" %>
+  </div>
+
+  <div class="col-md-7 field">
+    <%= form.label :longitude%>
+    <%= form.text_field :longitude, class:"form-control" %>
+  </div>
+
+  <div class="col-md-7 field">
+    <%= form.label :latitude%>
+    <%= form.text_field :latitude, class:"form-control" %>
   </div>
 
   <div class="actions col-md-7">
