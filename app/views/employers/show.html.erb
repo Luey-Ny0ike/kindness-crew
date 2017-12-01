@@ -12,6 +12,7 @@
       </div>
     <% end %>
     <div class="container small">
+        <!-- the small class is for small screen devices -->
       <h2><%= @employer.name%></h2>
       <br>
       <%= link_to "Edit Profile", edit_employer_registration_path, class:"btn btn-warning"%>
@@ -75,6 +76,7 @@
       <% end %>
 </div>
 <div class="small">
+  <!-- the small class is for small screen devices -->
   <h3>Your Comapany Location</h3>
   <% if @employer.address?%>
     <h4><%= @employer.address%></h4>
