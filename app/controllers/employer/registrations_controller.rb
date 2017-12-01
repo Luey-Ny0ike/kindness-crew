@@ -47,7 +47,7 @@ class Employer::RegistrationsController < Devise::RegistrationsController
   end
 
   def account_update_params
-    params.require(:employer).permit(:name, :number, :email, :password, :password_confirmation, :current_password, :background)
+    params.require(:employer).permit(:name, :number, :email, :password, :password_confirmation, :current_password, :background, :address, :longitude, :latitude)
   end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
