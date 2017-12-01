@@ -1,109 +1,152 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.top-part{
-  background-image: linear-gradient(rgba(100, 129, 141, 0.14),rgba(255,255,255,0.5)),url('https://images.unsplash.com/photo-1469398718052-b9d13df0d7c9?auto=format&fit=crop&w=1351&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: black;
-  height: 585px;
-  img{
-    opacity: 0.5;
-  }
-  .catch{
-    text-align: center;
-    font-family: 'Shrikhand', cursive;
-    margin-top: 300px;
-    margin-left: 50px;
-    margin-right: 50px;
-    color: white;
-  }
-  @media only screen and (min-width: 1041px){
+.a{
+  background-color: #f2f2f2;
+  .top-part{
+    background-image: linear-gradient(rgba(100, 129, 141, 0.14),rgba(255,255,255,0.5)),url('https://images.unsplash.com/photo-1469398718052-b9d13df0d7c9?auto=format&fit=crop&w=1351&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    height: 585px;
+    img{
+      opacity: 0.5;
+    }
     .catch{
       text-align: center;
       font-family: 'Shrikhand', cursive;
-      margin-top: 350px;
-      margin-left: 100px;
-      margin-right: 100px;
+      margin-top: 300px;
+      margin-left: 50px;
+      margin-right: 50px;
       color: white;
     }
-  }
-}
-  .why{
-    #whyv{
-      text-align: center;
-      font-family: 'Vollkorn SC', serif;
-    }
-    .moja{
-      background-image: linear-gradient(rgba(100, 143, 141, 0.29),rgba(255,255,255,0.5)),url('https://images.unsplash.com/photo-1459183885421-5cc683b8dbba?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: black;
-      height: 350px;
-      #moja{
-        text-align: center;
-        font-family: 'Lobster', cursive;
-        color: white;
-        margin-top: 140px;
-      }
-    }
-    .mbili{
-      background-image: linear-gradient(rgba(100, 129, 141, 0.14),rgba(255,255,255,0.5)),url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: black;
-      height: 350px;
-      #mbili{
-        text-align: center;
-        font-family: 'Ranchers', cursive;
-        color: #38393a;
-        margin-top: 240px;
-      }
-    }
-    .tatu{
-      background-image: linear-gradient(rgba(100, 129, 141, 0.14),rgba(255,255,255,0.5)),url('https://images.unsplash.com/photo-1488265333142-353a12931ee9?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: red;
-      height: 350px;
-      #tatu{
-        text-align: center;
-        font-family: 'Ranchers', cursive;
-        color: white;
-        margin-top: 140px;
-      }
-    }
-    .nne{
-      background-image: linear-gradient(rgba(100, 129, 141, 0.14),rgba(255,255,255,0.5)),url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1230&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      margin-top: 2px;
-      background-color: red;
-      height: 350px;
-      #nne{
-        text-align: center;
-        font-family: 'Lobster', cursive;
-        color: white;
-        margin-top: 240px;
-      }
-    }
-    .tano{
-      background-image: url('https://images.unsplash.com/photo-1509239767605-0703ef611f08?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-color: green;
-      height: 350px;
-      #tano{
+    @media only screen and (min-width: 1041px){
+      .catch{
         text-align: center;
         font-family: 'Shrikhand', cursive;
+        margin-top: 350px;
+        margin-left: 100px;
+        margin-right: 100px;
         color: white;
-        margin-top: 50px;
       }
     }
   }
+    .why{
+      #whyv{
+        text-align: center;
+        font-family: 'Vollkorn SC', serif;
+      }
+      .moja{
+        background-image: linear-gradient(rgba(100, 143, 141, 0.29),rgba(255,255,255,0.5)),url('https://images.unsplash.com/photo-1459183885421-5cc683b8dbba?auto=format&fit=crop&w=1950&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: black;
+        height: 350px;
+        #moja{
+          text-align: center;
+          font-family: 'Lobster', cursive;
+          color: white;
+          margin-top: 140px;
+        }
+      }
+      .mbili{
+        background-image: linear-gradient(rgba(100, 129, 141, 0.14),rgba(255,255,255,0.5)),url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: black;
+        height: 350px;
+        #mbili{
+          text-align: center;
+          font-family: 'Ranchers', cursive;
+          color: #38393a;
+          margin-top: 240px;
+        }
+      }
+      .tatu{
+        background-image: linear-gradient(rgba(100, 129, 141, 0.14),rgba(255,255,255,0.5)),url('https://images.unsplash.com/photo-1488265333142-353a12931ee9?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: red;
+        height: 350px;
+        #tatu{
+          text-align: center;
+          font-family: 'Ranchers', cursive;
+          color: white;
+          margin-top: 140px;
+        }
+      }
+      .nne{
+        background-image: linear-gradient(rgba(100, 129, 141, 0.14),rgba(255,255,255,0.5)),url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1230&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-top: 2px;
+        background-color: red;
+        height: 350px;
+        #nne{
+          text-align: center;
+          font-family: 'Lobster', cursive;
+          color: white;
+          margin-top: 240px;
+        }
+      }
+      .tano{
+        background-image: url('https://images.unsplash.com/photo-1509239767605-0703ef611f08?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: green;
+        height: 350px;
+        #tano{
+          text-align: center;
+          font-family: 'Shrikhand', cursive;
+          color: white;
+          margin-top: 50px;
+        }
+      }
+    }
+}
+.b{
+  #get-started{
+    text-align: center;
+    font-family: 'Patua One', cursive;
+    color: grey;
+  }
+  #shrink{
+    height: 224px;
+    width: 351px;
+  }
+  .email{
+    margin-top: 58px;
+    #expand{
+      height: 180px;
+      width: 180px;
+    }
+  }
+  .kato{
+    text-align: center;
+  }
+  .vl{
+    border-left: 3px solid grey;
+height: 1300px;
+top: 0;
+  }
+  #sm{
+    border-color: grey;
+    border-width: 2px;
+  }
+}
+@media only screen and (max-width: 1041px){
+  .vl{
+    display: none;
+  }
+}
+@media only screen and (min-width: 1041px){
+  #sm{
+    display: none;
+  }
+}
