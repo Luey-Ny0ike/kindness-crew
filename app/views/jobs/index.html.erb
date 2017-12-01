@@ -4,6 +4,7 @@
   <div class="v">
     <h2 id="featured">Featured Jobs</h2>
     <hr id="un"><br><br><br>
+    <!-- the break lines are to avoid overflow of items -->
     <div class="row">
       <%@jobu.each do |job|%>
         <div class="col-md-5 card">
@@ -27,6 +28,7 @@
       </div>
       <h2 id="recent">Recent Jobs</h2>
       <hr id="re"><br><br><br>
+      <!-- the break lines are to avoid overflow of items -->
       <div class="row">
         <% @jobs.each do |job|%>
           <div class="col-md-3 card">
