@@ -5,4 +5,7 @@ class Employer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
          mount_uploader :background, BackgroundUploader
+   geocoded_by :address
+   after_validation :geocode, :if => :address_changed?
+   # Activaion for the geocoder gem
 end
