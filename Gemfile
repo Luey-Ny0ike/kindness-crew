@@ -68,3 +68,5 @@ gem 'cancancan'
 # For the admin panel
 gem 'acts_as_votable', '~> 0.11.1'
 # For liking/unliking posts
+gem 'geocoder'
+# for geo location and mapping
