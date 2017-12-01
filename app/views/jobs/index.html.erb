@@ -1,29 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Jobs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @jobs.each do |job| %>
-      <tr>
-        <td><%= job.title %></td>
-        <td><%= job.description %></td>
-        <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="container-fluid jobs">
+  <div class="v">
+    <h2 id="featured">Featured Jobs</h2>
+    <hr id="un">
+    <div class="row">
+      <%@jobu.each do |job|%>
+        <div class="col-md-5 card">
+          <div class="row">
+            <div class="top col-md-6">
+              <%= image_tag(job.pictures.first.medium.url, class:"img-responsive", id:"image-main")%>
+            </div>
+            <div class="col-md-6">
+              <div class="details">
+                <h4 class="card-title">
+                  <%= job.title%></h4>
+                <h6 class="text-muted">by
+                  <%= job.employer.name %>
+                </h6>
+                <%= link_to "Learn More", job_path(job), class:"btn btn-info"%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <h2 id="recent">Recent Jobs</h2>
+      <hr id="re">
+      <div class="row">
+        <% @jobs.each do |job|%>
+          <div class="col-md-3 card">
+              <div class="top">
+                <%= image_tag(job.pictures.first.medium.url, class:"img-responsive", id:"image-main")%>
+              </div>
+                <div class="details">
+                  <h4 class="card-title">
+                    <%= job.title%></h4>
+                  <h6 class="text-muted">by
+                    <%= job.employer.name %>
+                  </h6>
+                  <%= link_to "Learn More", job_path(job), class:"btn btn-info"%>
+                </div>
+          </div>
+          <% end %>
+      </div>
+  </div>
+</div>
 
 <%= link_to 'New Job', new_job_path %>
